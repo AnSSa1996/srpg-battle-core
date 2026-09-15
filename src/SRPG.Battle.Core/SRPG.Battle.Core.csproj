@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Unity 2022.3 LTS에서 그대로 참조할 수 있도록 netstandard2.1로 맞춘다. -->
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>SRPG.Battle.Core</RootNamespace>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+</Project>
