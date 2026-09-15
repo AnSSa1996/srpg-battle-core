@@ -1,7 +1,6 @@
 # SRPG.Battle.Core
 
-개인 개발 중인 방치형 SRPG(Unity 2022.3)의 전투 로직을 엔진 의존 없이 떼어낸 라이브러리다.
-74파일 5,460라인, `UnityEngine` 참조 0개, 외부 의존은 `System` 계열뿐이다.
+개인 개발 중인 방치형 SRPG의 전투 로직을 엔진 의존 없이 떼어낸 라이브러입니다.
 
 ## 왜 뗐나
 
@@ -18,23 +17,23 @@ dotnet build src/SRPG.Battle.Core/SRPG.Battle.Core.csproj
 dotnet test  tests/SRPG.Battle.Core.Tests/SRPG.Battle.Core.Tests.csproj
 ```
 
-`netstandard2.1` 타깃이라 Unity 프로젝트에서 그대로 참조한다. 빌드 경고 0 · 오류 0, 테스트 39/39 통과.
+`netstandard2.1` 타깃이라 Unity 프로젝트에서 그대로 참조한다.
 
 ## 구성
 
-| 폴더 | 내용 | REQ-ID |
-|------|------|--------|
-| `Rng/` | 결정론 난수 (xorshift128+) | TECH-200~205 |
-| `Grid/` | 맨해튼 거리 · 이동 BFS · 방향/피격면 · AoE | CMB-400~450 |
-| `Formula/` | 피해 계산 · 필드효과 | CMB-100~105, 520~522 |
-| `Ai/` | 후보 생성 · 유틸리티 스코어링 · 1-ply 룩어헤드 | AI-020~171 |
-| `Loop/` | CT 스케줄러 · 턴 진행 · 목표 판정 · 헤드리스 러너 | CMB-010~054 |
-| `Events/` | `BattleEvent` · 싱크 3종(Null/List/Ascii) | VIEW-001~010 |
-| `Model/` | `BattleState` · 유닛 · 상태이상 · 이동 확정 | CMB-040, 200~208 |
-| `Data/` | 맵 · 스킬 · 상태이상 · 필드효과 정의 | CMB-200/300/500~ |
-| `Stats/` | 스탯 · 모디파이어 · CP 산출 | GROW-100~132 |
-| `Commands/` | 이동/공격/스킬/대기 | CMB-300~308 |
-| `Constants/` | `IntMath` · `Permille` · 전투/AI 상수 | — |
+| 폴더 | 내용 |
+|------|------|
+| `Rng/` | 결정론 난수 |
+| `Grid/` | 맨해튼 거리 · 이동 BFS · 방향/피격면 · AoE |
+| `Formula/` | 피해 계산 · 필드효과 |
+| `Ai/` | 후보 생성 · 유틸리티 스코어링 · 1-ply 룩어헤드 |
+| `Loop/` | CT 스케줄러 · 턴 진행 · 목표 판정 · 헤드리스 러너 |
+| `Events/` | `BattleEvent` · 싱크 3종(Null/List/Ascii) |
+| `Model/` | `BattleState` · 유닛 · 상태이상 · 이동 확정 |
+| `Data/` | 맵 · 스킬 · 상태이상 · 필드효과 정의|
+| `Stats/` | 스탯 · 모디파이어 · CP 산출 |
+| `Commands/` | 이동/공격/스킬/대기 |
+| `Constants/` | `IntMath` · `Permille` · 전투/AI 상수|
 
 ## 정해둔 것
 
@@ -48,6 +47,5 @@ dotnet test  tests/SRPG.Battle.Core.Tests/SRPG.Battle.Core.Tests.csproj
 ## 없는 것
 
 게임 본체(Unity 프로젝트)는 유료 에셋이 들어 있어 공개하지 않는다. 여기 있는 건 직접 쓴 전투 로직뿐이다.
-코드 주석의 `CMB-401` 같은 번호는 기획서 요구사항 ID다.
 
 MIT
